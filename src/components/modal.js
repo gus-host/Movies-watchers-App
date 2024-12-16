@@ -5,7 +5,7 @@ function Modal({ onClick, children }) {
       style={{
         maxWidth: "600px",
         margin: "0 auto",
-        width: "80vh",
+        width: "80%",
         height: "80vh",
         backgroundColor: "#fff",
         position: "fixed",
