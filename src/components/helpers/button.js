@@ -8,7 +8,7 @@ function Button({
   children,
 }) {
   return (
-    <Button
+    <button
       onClick={onClick}
       style={{
         backgroundColor: `${bg ? bg : "#0f0f0f"}`,
@@ -23,7 +23,7 @@ function Button({
       }}
     >
       {children}
-    </Button>
+    </button>
   );
 }
 

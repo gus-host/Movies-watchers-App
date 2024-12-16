@@ -163,7 +163,6 @@ export default function App() {
         }}
       >
         <h1 className="main-heading"> Watchers</h1>
-        {/* <span>Add watcher</span> */}
         <div style={{ display: "flex", alignItems: "center" }}>
           <Liked
             fill={`${numLiked > 0 ? "green" : ""}`}
@@ -183,6 +182,7 @@ export default function App() {
           handleDeleteWatcher={handleDeleteWatcher}
         />
       </div>
+
       {activeStatus && (
         <>
           <div
