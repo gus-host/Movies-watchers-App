@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Watcher from "./watcher.js";
 
 function WatcherList({
@@ -8,6 +9,8 @@ function WatcherList({
   handleSetSelectedformWatcher,
   handleDeleteWatcher,
 }) {
+  const [selectedWatcher, setSelectedWatcher] = useState(null);
+
   return (
     <>
       {watchers.map((watcher) => (
@@ -18,6 +21,8 @@ function WatcherList({
           movies={movies}
           handleSetSelectedformWatcher={handleSetSelectedformWatcher}
           handleDeleteWatcher={handleDeleteWatcher}
+          selectedWatcher={selectedWatcher}
+          setSelectedWatcher={setSelectedWatcher}
           key={watcher.id}
         />
       ))}

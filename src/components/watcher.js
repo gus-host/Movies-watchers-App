@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Button from "./helpers/button.js";
 import Liked from "./helpers/liked.js";
 import Cancel from "./helpers/cancel.js";
@@ -11,15 +10,18 @@ function Watcher({
   handleSetActiveStatus,
   handleSetSelectedformWatcher,
   handleDeleteWatcher,
+  selectedWatcher,
+  setSelectedWatcher,
 }) {
   const [movie] = [
     ...movies.filter((movie) => watcher.movie_title === movie.title),
   ];
-  const [selectedWatcher, setSelectedWatcher] = useState(null);
+
+  const isOpen = watcher === selectedWatcher;
+  // const [selectedWatcher, setSelectedWatcher] = useState(null);
+
   const handleToggle = function (watcher) {
-    setSelectedWatcher((selected) =>
-      selected?.id === watcher.id ? null : watcher
-    );
+    setSelectedWatcher(isOpen ? null : watcher);
   };
 
   return (
@@ -82,7 +84,7 @@ function Watcher({
           )}
         </div>
       </div>
-      {selectedWatcher && (
+      {isOpen && (
         <div className="watcher-details watching">
           <h4>Quote:</h4>
           <p style={{ marginBottom: "12px" }}>{watcher.quote}</p>
