@@ -213,7 +213,7 @@ function Watcher({
         className="show-details"
         onClick={() => handleToggle(watcher)}
       >
-        {selectedWatcher ? "hide" : "Show"} details &rarr;
+        {isOpen ? "hide" : "Show"} details &rarr;
       </p>
     </div>
   );
